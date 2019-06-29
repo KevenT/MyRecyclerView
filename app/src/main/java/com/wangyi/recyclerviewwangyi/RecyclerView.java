@@ -126,7 +126,8 @@ public class RecyclerView extends ViewGroup {
         }
 //        数据的高度
         int tmpH  = sumArray(heights, 0, heights.length);
-        h= Math.min(heightSize, tmpH);
+        h = Math.min(heightSize, tmpH);
+//        h= heightSize;
         setMeasuredDimension(widthSize, h);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
@@ -168,7 +169,16 @@ public class RecyclerView extends ViewGroup {
                 int diffY = currentY - y2;
 //                画布移动  并不影响子控件的位置
                 scrollBy(0, diffY);
+//              发现的问题，
+//              不添加：界面滑动不会跟随手指移动，而是呈现一次滑动加速滑动效果（界面滑动会越来越快）。
+                currentY = (int) event.getRawY();
             }
+            break;
+            case MotionEvent.ACTION_UP:
+            {
+
+            }
+
         }
         return super.onTouchEvent(event);
     }
@@ -225,6 +235,8 @@ public class RecyclerView extends ViewGroup {
         }
         repositionViews();
     }
+
+//    滑动对viewList进行摆放
     private void repositionViews() {
         int left, top, right, bottom, i;
         top =  - scrollY;

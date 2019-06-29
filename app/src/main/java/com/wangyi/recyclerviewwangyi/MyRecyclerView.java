@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MyRecyclerView extends AppCompatActivity {
     private static final String TAG = "wangyi";
     RecyclerView recyclerView;
 
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 //          recyclerView.setAdapter(new RecyclerView.Adapter() {
 //              @Override
 //              public View onCreateViewHodler(int position, View convertView, ViewGroup parent) {
-//                  convertView=  MainActivity.this.getLayoutInflater().inflate( R.layout.item_table,parent,false);
+//                  convertView=  MyRecyclerView.this.getLayoutInflater().inflate( R.layout.item_table,parent,false);
 //                  TextView textView= (TextView) convertView.findViewById(R.id.text1);
 //                  textView.setText("网易课堂 "+position);
 //                  Log.i(TAG, "onCreateViewHodler: " + convertView.hashCode());
@@ -63,16 +63,16 @@ public class MainActivity extends AppCompatActivity {
           recyclerView.setAdapter(new RecyclerView.Adapter() {
               @Override
               public View onCreateViewHodler(int position, View convertView, ViewGroup parent) {
-//                  convertView=  MainActivity.this.getLayoutInflater().inflate( R.layout.item_table,parent,false);
+//                  convertView=  MyRecyclerView.this.getLayoutInflater().inflate( R.layout.item_table,parent,false);
 //                  TextView textView= (TextView) convertView.findViewById(R.id.text1);
 //                  textView.setText("网易课堂 "+position);
 //                  Log.i(TAG, "onCreateViewHodler: " + convertView.hashCode());
                   if(position%2==0){
-                      convertView=  MainActivity.this.getLayoutInflater().inflate( R.layout.item_table,parent,false);
+                      convertView=  MyRecyclerView.this.getLayoutInflater().inflate( R.layout.item_table,parent,false);
                       TextView textView= (TextView) convertView.findViewById(R.id.text1);
                       textView.setText("网易课堂 "+position);
                   }else{
-                      convertView=  MainActivity.this.getLayoutInflater().inflate( R.layout.item_table2,parent,false);
+                      convertView=  MyRecyclerView.this.getLayoutInflater().inflate( R.layout.item_table2,parent,false);
                       TextView textView= (TextView) convertView.findViewById(R.id.text2);
                       textView.setText("网易图标 "+position);
                   }
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new RecyclerView.Adapter() {
             @Override
             public View onCreateViewHodler(int position, View convertView, ViewGroup parent) {
-                convertView=  MainActivity.this.getLayoutInflater().inflate( R.layout.item_table,parent,false);
+                convertView=  MyRecyclerView.this.getLayoutInflater().inflate( R.layout.item_table,parent,false);
                 TextView textView= (TextView) convertView.findViewById(R.id.text1);
                 textView.setText("网易课堂 "+position);
                 Log.i(TAG, "onCreateViewHodler: " + convertView.hashCode());
